@@ -81,9 +81,7 @@ query MyQuery {
 		cover {
 			alternativeText
 			childStrapiCloudinaryBridge {
-				fluid {
-					...CloudinaryAssetFluid
-				}
+				gatsbyImageData
 			}
 		}
 	}
@@ -95,6 +93,6 @@ and use it as
 ```jsx
 <GatsbyImage
 	alt={article.cover.alternativeText}
-	image={article.cover.childStrapiCloudinaryBridge.fluid}
+	image={getImage(article.cover.childStrapiCloudinaryBridge)}
 />
 ```
