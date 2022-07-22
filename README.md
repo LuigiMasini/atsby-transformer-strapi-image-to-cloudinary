@@ -1,6 +1,10 @@
 # gatsby-transformer-strapi-cloudinary-media-bridge
 
-Transform strapi image nodes to cloudinary image nodes.
+Transform strapi image nodes to cloudinary image nodes, without downloading images.
+
+> __NOTE:__ the images need to be already on cloudinary, we are assuming strapi is using `provider-upload-cloudinary`.
+
+> __NOTE:__ since we are using cloudinary image optimization, we can disable _Responsive friendly upload_ in Media librari in strapi. This will save bandwidth and disk space and keep everything cleaner.
 
 ## Installation
 
