@@ -1,0 +1,12 @@
+{
+  "name": "gatsby-transformer-strapi-cloudinary-media-bridge",
+  "version": "1.0.0",
+  "description": "transform strapi image nodes to cloudinary image nodes ",
+  "repository": "git@github.com:LuigiMasini/gatsby-transformer-strapi-image-to-cloudinary.git",
+  "author": "Luigi Masini <luigimasini.lm@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
