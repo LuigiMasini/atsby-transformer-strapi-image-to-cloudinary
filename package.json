@@ -8,5 +8,9 @@
   "private": false,
   "dependencies": {
     "lodash": "^4.17.21"
-  }
+  },
+  "files": [
+    "gatsby-node.js",
+    "index.js"
+  ],
 }
