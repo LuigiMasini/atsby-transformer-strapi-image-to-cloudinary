@@ -66,3 +66,31 @@ module.exports = {
 	]
 }
 ```
+
+## Usage
+
+In your query you can do
+
+```graphql
+query MyQuery {
+	strapiArticle {
+		cover {
+			alternativeText
+			childStrapiCloudinaryBridge {
+				fluid {
+					...CloudinaryAssetFluid
+				}
+			}
+		}
+	}
+}
+```
+
+and use it as
+
+```jsx
+<GatsbyImage
+	alt={article.cover.alternativeText}
+	image={article.cover.childStrapiCloudinaryBridge.fluid}
+/>
+```
