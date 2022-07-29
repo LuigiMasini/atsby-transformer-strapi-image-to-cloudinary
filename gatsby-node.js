@@ -2,7 +2,7 @@ const { set } = require('lodash');
 
 async function onCreateNode ({
 	node,
-	actions : { createNode, createNodeField, createParentChildLink, deleteNode},
+	actions : { createNode, createParentChildLink },
 	createNodeId,
 	createContentDigest,
 	}, config) {
@@ -25,7 +25,7 @@ async function onCreateNode ({
 		cloudinaryAssetData:true,
 		internal: {
 			type: 'StrapiCloudinaryBridge',
-			contentDigest: createContentDigest(`StrapiCloudinaryBridge-${node.internal.contentDigest}`)
+			contentDigest: createContentDigest(`StrapiCloudinaryBridge-${node.internal.contentDigest}-${node.id}`)
 		},
 	}
 
