@@ -11,7 +11,7 @@ Transform strapi image nodes to cloudinary image nodes, without downloading imag
 ```sh
 yarn add gatsby-transformer-strapi-cloudinary-media-bridge
 
-#mim required: @3.0.0
+#min version required: @3.0.0
 yarn upgrade gatsby-transformer-cloudinary
 
 yarn upgrade @luisinimagigi/gatsby-source-strapi
