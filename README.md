@@ -4,14 +4,15 @@ Transform strapi image nodes to cloudinary image nodes, without downloading imag
 
 > __NOTE:__ the images need to be already on cloudinary, we are assuming strapi is using `provider-upload-cloudinary`.
 
-> __NOTE:__ since we are using cloudinary image optimization, we can disable _Responsive friendly upload_ in Media librari in strapi. This will save bandwidth and disk space and keep everything cleaner.
+> __NOTE:__ since we are using cloudinary image optimization, we can disable _Responsive friendly upload_ in Media Library in Strapi. This will save bandwidth and disk space and keep everything cleaner.
 
 ## Installation
 
 ```sh
 yarn add gatsby-transformer-strapi-cloudinary-media-bridge
 
-yarn upgrade gatsby-transformer-cloudinary@^3.0.0
+#mim required: @3.0.0
+yarn upgrade gatsby-transformer-cloudinary
 
 yarn upgrade @luisinimagigi/gatsby-source-strapi
 ```
