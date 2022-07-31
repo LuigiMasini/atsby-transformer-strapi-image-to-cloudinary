@@ -10,29 +10,13 @@ Transform strapi image nodes to cloudinary image nodes, without downloading imag
 
 ```sh
 yarn add gatsby-transformer-strapi-cloudinary-media-bridge
-```
 
-This plugins also need special version of `gatsby-transform-cloudinary` and optionally of `gatsby-source-strapi`.
+yarn upgrade gatsby-transformer-cloudinary@^3.0.0
 
-
-### gatsby-transformer-cloudinary
-
-
-```sh
-yarn upgrade gatsby-transformer-cloudinary@beta-v4
-```
-
-We are using this beta as it allows [this](https://github.com/cloudinary-devs/gatsby-transformer-cloudinary/pull/163#issuecomment-1163043360) feature.
-When it will be released we won't need this beta.
-
-
-### gatsby-source-strapi
-
-```sh
 yarn upgrade @luisinimagigi/gatsby-source-strapi
 ```
 
-This is not necessary but has the `skipFileDownloads: true` option which will save bandwidth.
+The last one is not necessary but has the `skipFileDownloads: true` option which will save bandwidth.
 When it will be released we won't need this version.
 
 
@@ -53,18 +37,18 @@ module.exports = {
 			},
 		},
 		{
+			resolve: 'gatsby-transformer-strapi-cloudinary-media-bridge',
+			options: {
+				cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+			},
+		},
+		{
 			resolve: 'gatsby-transformer-cloudinary',
 			options: {
 				cloudName: process.env.CLOUDINARY_CLOUD_NAME,
 				apiKey: process.env.CLOUDINARY_API_KEY,
 				apiSecret: process.env.CLOUDINARY_API_SECRET,
 				transformTypes:["StrapiCloudinaryBridge"],
-			},
-		},
-		{
-			resolve: 'gatsby-transformer-strapi-cloudinary-media-bridge',
-			options: {
-				cloudName: process.env.CLOUDINARY_CLOUD_NAME,
 			},
 		},
 	]
