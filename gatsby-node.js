@@ -1,4 +1,5 @@
 const { set } = require('lodash');
+const { extractPublicId } = require(`cloudinary-build-url`)
 
 async function onCreateNode ({
 	node,
@@ -17,7 +18,7 @@ async function onCreateNode ({
 		id: createNodeId(`StrapiCloudinaryBridge-${node.id}`),
 		parent:node.id,
 		children: [],
-		publicId:node.hash,
+		publicId:extractPublicId(node.url),
 		cloudName:config.cloudName,
 		originalWidth:node.width,
 		originalHeight:node.height,
